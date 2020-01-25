@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Understanding from '../Understanding/Understanding';
+
 
 
 class Feels extends Component {
+    state = {
+        feeling: 0,
+            }
 
     render() {
         return (
