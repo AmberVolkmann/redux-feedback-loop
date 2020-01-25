@@ -18,14 +18,19 @@ class Comments extends Component {
     }
     
     handleClick = () => {
-        this.props.history.push('/review')
+        this.props.history.push('/review');
+        this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.comments})
     }
 
     render() {
         return (
             <>
                 <h2>Comments</h2>
+                <form>
+                <input type="text" placeholder="Comments"
+                onChange={(event) => this.handleChange(event)}></input>
                 <button onClick={this.handleClick}>Next</button>
+                </form>
             </>
         )
     }

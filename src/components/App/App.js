@@ -30,6 +30,7 @@ class App extends Component {
         <br/>
         <Router>
           <Route exact path ="/" component={Feels}/>
+          <Route exact path ="/feels" component={Feels}/>
           <Route exact path ="/understanding" component={Understanding}/>
           <Route exact path ="/support" component={Support}/>
           <Route exact path ="/comments" component={Comments}/>

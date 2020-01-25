@@ -12,13 +12,14 @@ class Understanding extends Component {
         // Change the state from the inputs
         handleChange = (event) => {
             this.setState ({
-                feels: event.target.value
+                understanding: event.target.value
             })
             
         }
     
         handleClick = () => {
             this.props.history.push('/support')
+            this.props.dispatch({type: 'ADD_UNDERSTANDING', payload: this.state.understanding})
         }
 
 
@@ -26,7 +27,12 @@ class Understanding extends Component {
         return (
             <>
                 <h2>Understanding</h2>
+                <form>
+                <input type="number" placeholder="Enter A Number 1-5"
+                onChange={(event) => this.handleChange(event)}></input>
                 <button onClick={this.handleClick}>Next</button>
+
+                </form>
             </>
         )
     }

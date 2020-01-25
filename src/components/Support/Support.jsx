@@ -19,13 +19,19 @@ class Support extends Component {
         
     handleClick = () => {
         this.props.history.push('/comments')
+        this.props.dispatch({type: 'ADD_SUPPORT', payload: this.state.support})
     }
 
     render() {
         return (
             <>
                 <h2>Support</h2>
+                <form>
+                <input type="number" placeholder="Enter A Number 1-5"
+                onChange={(event) => this.handleChange(event)}></input>
                 <button onClick={this.handleClick}>Next</button>
+
+                </form>
             </>
         )
     }

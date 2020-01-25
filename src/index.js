@@ -7,17 +7,46 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
-const starterState = {
-    feels: 0,
-    
+const allTheFeels = (state = 0, action) => {
+    console.log(action.payload);
+    if (action.type === 'ADD_FEELING') {
+        return action.payload
+    }
+    return state;
+}
 
+const  understandingRouter = (state = 0, action) => {
+    console.log(action.payload);
+    if (action.type === 'ADD_UNDERSTANDING') {
+        return action.payload
+    }
+    return state;
+}
 
+const  supportRouter = (state = 0, action) => {
+    console.log(action.payload);
+    if (action.type === 'ADD_SUPPORT') {
+        return action.payload
+    }
+    return state;
+}
+
+const  commentsRouter = (state = 0, action) => {
+    console.log(action.payload);
+    if (action.type === 'ADD_COMMENTS') {
+        return action.payload
+    }
+    return state;
 }
 
 
 
 const storeInstance = createStore(
     combineReducers({
+        allTheFeels,
+        understandingRouter,
+        supportRouter,
+        commentsRouter
         
     }),
     applyMiddleware(logger),
