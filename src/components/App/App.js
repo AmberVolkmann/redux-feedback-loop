@@ -29,12 +29,12 @@ class App extends Component {
         </header>
         <br/>
         <Router>
-        <Route exact path ="/" component={Feels}/>
-        <Route exact path ="/understanding" component={Understanding}/>
-        <Route exact path ="/support" component={Support}/>
-        <Route exact path ="/support" component={Comments}/>
-        <Route exact path ="/support" component={Review}/>
-        <Route exact path ="/support" component={Success}/>
+          <Route exact path ="/" component={Feels}/>
+          <Route exact path ="/understanding" component={Understanding}/>
+          <Route exact path ="/support" component={Support}/>
+          <Route exact path ="/comments" component={Comments}/>
+          <Route exact path ="/review" component={Review}/>
+          <Route exact path ="/success" component={Success}/>
         </Router>
       </div>
       

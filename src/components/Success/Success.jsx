@@ -4,11 +4,16 @@ import { connect } from 'react-redux';
 
 class Success extends Component {
 
+    
+    handleClick = () => {
+        this.props.history.push('/feels')
+    }
+
     render() {
         return (
             <>
                 <h2>Success</h2>
-                {/* <button><Link to="/customer-information">next page</Link></button> */}
+                <button onClick={this.handleClick}>Submit Another Review</button>
             </>
         )
     }
