@@ -7,6 +7,15 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
+const starterState = {
+    feels: 0,
+    
+
+
+}
+
+
+
 const storeInstance = createStore(
     combineReducers({
         
