@@ -6,7 +6,7 @@ class Understanding extends Component {
 
         // Create a state for feeling
         state = {
-            understanding: 0,
+            understanding: '',
                 }
     
         // Change the state from the inputs

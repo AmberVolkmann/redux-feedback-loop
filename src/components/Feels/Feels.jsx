@@ -8,7 +8,7 @@ class Feels extends Component {
 
     // Create a state for feeling
     state = {
-        feels: 0,
+        feels: '',
             }
 
     // Change the state from the inputs

@@ -6,7 +6,7 @@ class Support extends Component {
 
     // Create a state for feeling
     state = {
-        support: 0,
+        support: '',
     }
         
     // Change the state from the inputs

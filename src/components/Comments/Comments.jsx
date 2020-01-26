@@ -6,7 +6,7 @@ class Comments extends Component {
 
         // Create a state for feeling
     state = {
-        comments: 0,
+        comments: ''
         }
     
     // Change the state from the inputs
