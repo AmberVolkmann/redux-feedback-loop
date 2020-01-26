@@ -27,12 +27,12 @@ class Understanding extends Component {
         return (
             <>
                 <h2>Understanding</h2>
-                <form>
+                
                 <input type="number" placeholder="Enter A Number 1-5"
                 onChange={(event) => this.handleChange(event)}></input>
                 <button onClick={this.handleClick}>Next</button>
 
-                </form>
+                
             </>
         )
     }

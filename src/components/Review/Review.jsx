@@ -6,19 +6,19 @@ import axios from 'axios';
 class Review extends Component {
 
     handleClick = () => {
-        
+        this.props.history.push('/success');
         // create variable that takes in the whole reduxStore
         let entireSurvey = {
             feels: this.props.reduxStore.feedback.feels,
             understanding: this.props.reduxStore.feedback.understanding,
-            success: this.props.reduxStore.feedback.support,
+            support: this.props.reduxStore.feedback.support,
             comments: this.props.reduxStore.feedback.comments,
         }
 
         axios.post('/feedback', entireSurvey)
         .then((response)=> {
-            // this.props.history.push('/success');
-            console.log('heres the thing', entireSurvey)
+            
+            console.log('heres the thing', response)
         }).catch((error) => {
             console.log('error with POST request', error);
         })
