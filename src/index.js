@@ -3,38 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import logger from 'redux-logger';
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, bindActionCreators } from 'redux'
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
-const allTheFeels = (state = 0, action) => {
+const feedback = (state = {}, action) => {
     console.log(action.payload);
     if (action.type === 'ADD_FEELING') {
-        return action.payload
-    }
-    return state;
-}
-
-const  understandingRouter = (state = 0, action) => {
-    console.log(action.payload);
-    if (action.type === 'ADD_UNDERSTANDING') {
-        return action.payload
-    }
-    return state;
-}
-
-const  supportRouter = (state = 0, action) => {
-    console.log(action.payload);
-    if (action.type === 'ADD_SUPPORT') {
-        return action.payload
-    }
-    return state;
-}
-
-const  commentsRouter = (state = 0, action) => {
-    console.log(action.payload);
-    if (action.type === 'ADD_COMMENTS') {
-        return action.payload
+        return {
+            ...state,
+            feels: action.payload
+        }
+    } else if (action.type === 'ADD_UNDERSTANDING') {
+        return {
+            ...state,
+            understanding: action.payload
+        }
+    } else if (action.type === 'ADD_SUPPORT') {
+        return {
+            ...state,
+            support: action.payload
+        }
+    } else if (action.type === 'ADD_COMMENTS') {
+        return {
+            ...state,
+            comments: action.payload
+        }
     }
     return state;
 }
@@ -43,10 +37,7 @@ const  commentsRouter = (state = 0, action) => {
 
 const storeInstance = createStore(
     combineReducers({
-        allTheFeels,
-        understandingRouter,
-        supportRouter,
-        commentsRouter
+        feedback
         
     }),
     applyMiddleware(logger),

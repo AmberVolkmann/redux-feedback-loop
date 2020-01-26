@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 
 class Review extends Component {
 
-    // Create a state for feeling
-    state = {
-        feels: 0,
-            }
+    handleClick = () => {
+        // this.props.history.push('/success');
+        // create variable that takes in the whole reduxStore
+        axios.post('/feedback',)
+        .then((response)=> {
+            this.props.history.push('/success');
+        }).catch((error) => {
+            console.log('error with POST request', error);
+        })
+    }
+
     
     // Change the state from the inputs
     handleChange = (event) => {
@@ -17,9 +25,7 @@ class Review extends Component {
             
     }
     
-    handleClick = () => {
-        this.props.history.push('/success')
-    }
+
 
     render() {
         return (
