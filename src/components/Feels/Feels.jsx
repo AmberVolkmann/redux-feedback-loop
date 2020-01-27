@@ -6,8 +6,9 @@ class Feels extends Component {
 
     // Create a state for feeling
     state = {
-        feels: '',
+        feels: "",
             }
+
 
     // Change the state from the inputs
     handleChange = (event) => {
@@ -19,26 +20,36 @@ class Feels extends Component {
 
     handleClick = (event) => {
         event.preventDefault();
+        
         this.props.history.push('/understanding');
         this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feels})
+
+        // if(this.state.feels === 0) {this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feels})
+        // this.props.history.push('/understanding');
+        // }
+        // else{alert('WAIT. TELL ME!!!!')}
     }
 
 
 
+
     render() {
+
         return (
             <>
                 <h2>Feels</h2>
-                
-                <input type="number" placeholder="Enter A Number 1-5"
-                onChange={(event) => this.handleChange(event)}></input>
-                <button onClick={this.handleClick}>Next</button>
-
+                <form>
+                    <input type="number" placeholder="Enter A Number" 
+                    onChange={(event) => this.handleChange(event)}></input>
+                    <button onClick={this.handleClick}>Next</button>
+                </form>
                 
             </>
         )
     }
 }
+
+
 
 const mapStateToProps = (reduxStore) => ({
     reduxStore

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './Comments.css'
 
 
 class Comments extends Component {
@@ -27,8 +28,8 @@ class Comments extends Component {
             <>
                 <h2>Comments</h2>
                 <form>
-                <input type="text" placeholder="Comments"
-                onChange={(event) => this.handleChange(event)}></input>
+                <textarea className="commentBox" type="text" placeholder="Comments"
+                onChange={(event) => this.handleChange(event)}></textarea>
                 <button onClick={this.handleClick}>Next</button>
                 </form>
             </>
