@@ -30,6 +30,7 @@ class Comments extends Component {
                 <form>
                 <textarea className="commentBox" type="text" placeholder="Comments"
                 onChange={(event) => this.handleChange(event)}></textarea>
+                <br></br>
                 <button onClick={this.handleClick}>Next</button>
                 </form>
             </>
